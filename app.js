@@ -7,29 +7,31 @@ angularApp.controller('mainController', ['$scope', '$log', function ($scope, $lo
     $scope.userHandle = {
         handle: "",
         hideHandleInputField: false,
-        handleUpdated: function() {
+        handleUpdated: function () {
             $scope.userHandle.hideHandleInputField = true;
-        }
-    }
-    
-    $scope.name = "";
-    $scope.allowedCharacters = 10;
-    $scope.handleNameUpdated = function () {
-    
-        if ($scope.name.length < $scope.allowedCharacters ) {
-            $scope.nameInvalid = "alert alert-warning";     
-        } else {
-            $scope.nameValid = "alert alert-success";
-        }
-        
-        $scope.progressPercent = (($scope.name.length * 100) / $scope.allowedCharacters);
-        if ($scope.progressPercent > 100) {
-            $scope.progressPercent = 100;
         }
     };
     
-    $log.info("Name is " + $scope.name);
+    $scope.nameHandler = {
+        name: "",
+        allowedCharacters: 10,
+        progressPercent: 0,
+        nameInvalid: "",
+        nameValid: "",
+        handleNameUpdated: function () {
+            if ($scope.nameHandler.name.length < $scope.nameHandler.allowedCharacters) {
+                $scope.nameHandler.nameInvalid = "alert alert-warning";
+                $scope.nameHandler.nameValid = "";
+            } else {
+                $scope.nameHandler.nameValid = "alert alert-success";
+                $scope.nameHandler.nameInvalid = "";
+            }
+        
+            $scope.nameHandler.progressPercent = (($scope.nameHandler.name.length * 100) / $scope.nameHandler.allowedCharacters);
+            if ($scope.nameHandler.progressPercent > 100) {
+                $log.info("name length is greater than or equal to 100");
+                $scope.nameHandler.progressPercent = 100;
+            }
+        }
+    };
 }]);
-
-
-

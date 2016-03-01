@@ -42,16 +42,16 @@
             
                 <div>
                         <div class="input-group">
-                            <input class="form-control" type="text" ng-model="name" placeholder="Enter your name..." ng-keyup="handleNameUpdated()" aria-describedby="nameFieldLabel"></input>
+                            <input class="form-control" type="text" ng-model="nameHandler.name" placeholder="Enter your name..." ng-keyup="nameHandler.handleNameUpdated()" aria-describedby="nameFieldLabel"></input>
                             <span id="nameFieldLabel" class="input-group-addon">Name</span>
                         </div>
                         <br>
-                        <div class="" ng-class="nameInvalid" role="alert" ng-show="name.length < allowedCharacters" ngCloak>The input length ({{ name.length }}) is less than {{allowedCharacters}}</div>
-                        <div class="" ng-class="nameValid" role="alert" ng-show="name.length >= allowedCharacters" role="alert" ngCloak>The input length ({{ name.length }}) is more than {{allowedCharacters}}</div>
+                        <div class="" ng-class="nameHandler.nameInvalid" role="alert" ng-show="nameHandler.name.length < nameHandler.allowedCharacters" ngCloak>The input length ({{ nameHandler.name.length }}) is less than {{nameHandler.allowedCharacters}}</div>
+                        <div class="" ng-class="nameHandler.nameValid" role="alert" ng-show="nameHandler.name.length >= nameHandler.allowedCharacters" ngCloak>The input length ({{ nameHandler.name.length }}) is more than {{nameHandler.allowedCharacters}}</div>
                         <br>
                         <div class="progress">
-                          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progressPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressPercent}}%">
-                            <span class="sr-only">{{progressPercent}}% Complete</span>
+                          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{nameHandler.progressPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{nameHandler.progressPercent}}%">
+                            <span class="sr-only">{{nameHandler.progressPercent}}% Complete</span>
                           </div>
                         </div>            
     
