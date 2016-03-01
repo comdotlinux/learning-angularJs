@@ -2,15 +2,12 @@
 var angularApp = angular.module('angularApp', []);
 
 // CONTROLLERS
-angularApp.controller('mainController', ['$scope', function ($scope) {
+angularApp.controller('mainController', ['$scope', '$log', function ($scope, $log) {
     $scope.name = "James";
-
-<<<<<<< HEAD
     $scope.handle = 'Guru';
-
-=======
     $scope.allowedCharacters = 10;
->>>>>>> 2734e3da42485885c8bab7eeb5999d95b36676c9
+    
+    $log.info("Name is " + $scope.name);
 }]);
 
 
