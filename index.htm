@@ -38,13 +38,17 @@
         <div class="container">
 
 			<div ng-controller="mainController">
-                <label ng-hide="hideHandleInputField" ngCloak>Please enter a Handle...</label>
-                <input type="text" ng-model="handle" ng-blur="handleUpdated()" ng-hide="hideHandleInputField" ngCloak></input>
-                
+                <div class="input-group">
+                    <span class="input-group-addon" id="handleLabel" ng-hide="hideHandleInputField" ngCloak>@</span>
+                    <input class="form-control" type="text" ng-model="handle" ng-blur="handleUpdated()" ng-hide="hideHandleInputField" ngCloak aria-describedby="handleLabel" placeholder="Enter a Handle"></input>
+                </div>
                 <h1 ng-show="handle.length" ngCloak>Hello {{ handle }}!</h1>
+            
                 <div>
-                        <label>What is your name?</label>
-                        <input type="text" ng-model="name"></input>
+                        <div class="input-group">
+                            <input class="form-control" type="text" ng-model="name" placeholder="Enter your name..." aria-describedby="nameFieldLabel"></input>
+                            <span id="nameFieldLabel" class="input-group-addon">Name</span>
+                        </div>
                         <br>
                         <h3 class="alert"  ng-show="name.length < allowedCharacters" ngCloak>The input length ({{ name.length }}) is less than {{allowedCharacters}}</h3>
                         <h3 ng-show="name.length >= allowedCharacters" ngCloak>The input length ({{ name.length }}) is more than {{allowedCharacters}}</h3>
