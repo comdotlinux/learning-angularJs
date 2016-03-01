@@ -29,7 +29,7 @@
 				</div>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+					<li><a href="/index.htm"><i class="fa fa-home"></i>Home</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -46,12 +46,12 @@
             
                 <div>
                         <div class="input-group">
-                            <input class="form-control" type="text" ng-model="name" placeholder="Enter your name..." aria-describedby="nameFieldLabel"></input>
+                            <input class="form-control" type="text" ng-model="name" placeholder="Enter your name..." ng-blur="handleNameUpdated()" aria-describedby="nameFieldLabel"></input>
                             <span id="nameFieldLabel" class="input-group-addon">Name</span>
                         </div>
                         <br>
-                        <h3 class="alert"  ng-show="name.length < allowedCharacters" ngCloak>The input length ({{ name.length }}) is less than {{allowedCharacters}}</h3>
-                        <h3 ng-show="name.length >= allowedCharacters" ngCloak>The input length ({{ name.length }}) is more than {{allowedCharacters}}</h3>
+                        <div class="{{messageClass}}" role="alert" ng-show="name.length < allowedCharacters" ngCloak>The input length ({{ name.length }}) is less than {{allowedCharacters}}</div>
+                        <div class="{{messageClass}}" role="alert" ng-show="name.length >= allowedCharacters" role="alert" ngCloak>The input length ({{ name.length }}) is more than {{allowedCharacters}}</div>
                 </div>
                 </hr>
 
