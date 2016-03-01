@@ -39,7 +39,23 @@
 
 			<div ng-controller="mainController">
 
+<<<<<<< HEAD
                 <h1>Hello {{ handle }}!</h1>
+=======
+                <div>
+                        <label>What is your name?</label>
+                        <input type="text" ng-model="name"></input>
+                        <br>
+                        <h3 class="alert"  ng-show="name.length < allowedCharacters" ngCloak>The input length ({{ name.length }}) is less than {{allowedCharacters}}</h3>
+                <h3 ng-show="name.length >= allowedCharacters" ngCloak>The input length ({{ name.length }}) is more than {{allowedCharacters}}</h3>
+
+                </div>
+                </hr>
+
+                <h1 ngCloak>Hello {{name}}!</h1>
+
+
+>>>>>>> 2734e3da42485885c8bab7eeb5999d95b36676c9
 
             </div>
 
