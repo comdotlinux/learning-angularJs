@@ -3,16 +3,17 @@ var angularApp = angular.module('angularApp', []);
 
 // CONTROLLERS
 angularApp.controller('mainController', ['$scope', '$log', function ($scope, $log) {
+    
+    $scope.userHandle = {
+        handle: "",
+        hideHandleInputField: false,
+        handleUpdated: function() {
+            $scope.userHandle.hideHandleInputField = true;
+        }
+    }
+    
     $scope.name = "";
-    $scope.handle = "";
     $scope.allowedCharacters = 10;
-    
-    $scope.hideHandleInputField = false;
-    
-    $scope.handleUpdated = function() {
-        $scope.hideHandleInputField = true;
-    };
-    
     $scope.handleNameUpdated = function () {
     
         if ($scope.name.length < $scope.allowedCharacters ) {
