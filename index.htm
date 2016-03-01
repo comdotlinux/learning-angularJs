@@ -38,7 +38,7 @@
                     <span class="input-group-addon" id="handleLabel" ng-hide="userHandle.hideHandleInputField" ngCloak>@</span>
                     <input class="form-control" type="text" ng-model="userHandle.handle" ng-blur="userHandle.handleUpdated()" ng-hide="userHandle.hideHandleInputField" ngCloak aria-describedby="handleLabel" placeholder="Enter a Handle"></input>
                 </div>
-                <h1 ng-show="userHandle.handle.length" ngCloak>Hello {{ handle }}!</h1>
+                <h1 ng-show="userHandle.handle.length" ngCloak>Hello {{ userHandle.handle }}!</h1>
             
                 <div>
                         <div class="input-group">
