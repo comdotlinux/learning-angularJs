@@ -48,6 +48,13 @@
                         <br>
                         <div class="" ng-class="nameInvalid" role="alert" ng-show="name.length < allowedCharacters" ngCloak>The input length ({{ name.length }}) is less than {{allowedCharacters}}</div>
                         <div class="" ng-class="nameValid" role="alert" ng-show="name.length >= allowedCharacters" role="alert" ngCloak>The input length ({{ name.length }}) is more than {{allowedCharacters}}</div>
+                        <br>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progressPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progressPercent}}%">
+                            <span class="sr-only">{{progressPercent}}% Complete</span>
+                          </div>
+                        </div>            
+    
                 </div>
                 </hr>
 
