@@ -1,16 +1,25 @@
+//var angular = require("angular");
 // MODULE
 var angularApp = angular.module('angularApp', []);
 
 // CONTROLLERS
-angularApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+angularApp.controller('mainController', ['$scope', '$log','$timeout', function($scope, $log, $timeout) {
 
     $scope.userHandle = {
         handle: "",
         hideHandleInputField: false,
+        highlight: "",
         handleUpdated: function() {
-            $scope.userHandle.hideHandleInputField = true;
+            $scope.userHandle.hideHandleInputField = ($scope.userHandle.handle.length > 0);
         }
     };
+    
+    $timeout(function(){
+        $log.info("")
+        if($scope.userHandle.handle.length > 0){
+            $scope.userHandle.hideHandleInputField = "alert-info";
+        }
+    },10000);
 
     $scope.nameHandler = {
         name: "",
