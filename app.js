@@ -1,4 +1,4 @@
-//var angular = require("angular");
+//var angular = require("./angular");
 // MODULE
 var angularApp = angular.module('angularApp', []);
 
@@ -15,10 +15,8 @@ angularApp.controller('mainController', ['$scope', '$log','$timeout', function($
     };
     
     $timeout(function(){
-        $log.info("")
-        if($scope.userHandle.handle.length > 0){
-            $scope.userHandle.hideHandleInputField = "alert-info";
-        }
+        $log.info("Timeout occured..... checking user handle")
+        $scope.userHandle.highlight = $scope.userHandle.handle.length === 0;
     },10000);
 
     $scope.nameHandler = {

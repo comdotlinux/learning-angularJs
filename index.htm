@@ -34,9 +34,10 @@
         <div class="container">
 
 			<div ng-controller="mainController">
+                <div class="alert alert-warning" role="alert" ng-if="userHandle.highlight" ng-hide="userHandle.hideHandleInputField" ngCloak>Hey Want to enter a user handle?</div>
                 <div class="input-group">
                     <span class="input-group-addon" id="handleLabel" ng-hide="userHandle.hideHandleInputField" ngCloak>@</span>
-                    <input class="form-control" ng-class="userHandle.high" type="text" ng-model="userHandle.handle" ng-blur="userHandle.handleUpdated()" ng-hide="userHandle.hideHandleInputField" ngCloak aria-describedby="handleLabel" placeholder="Enter a Handle"></input>
+                    <input class="form-control" type="text" ng-model="userHandle.handle" ng-blur="userHandle.handleUpdated()" ng-hide="userHandle.hideHandleInputField" ngCloak aria-describedby="handleLabel" placeholder="Enter a Handle"></input>
                 </div>
                 <h1 ng-show="userHandle.handle.length" ngCloak>Hello {{ userHandle.handle }}!</h1>
             
